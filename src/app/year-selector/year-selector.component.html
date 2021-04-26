@@ -1,0 +1,56 @@
+<button (click)="getYears()"> Select vehicle </button>
+<h1> Select Year</h1>
+<!-- <div *ngFor="let year of years;let i = index">
+    Percentile {{i % 5 == 0}}
+    <div *ngIf="i % 5 == 0" class="row">
+      {{ year }}
+      <div *ngIf="canShow(i + 1)">{{ years[i + 1] }}</div>
+      <div *ngIf="canShow(i + 2)">{{ years[i + 2] }}</div>
+      <div *ngIf="canShow(i + 3)">{{ years[i + 3] }}</div>
+      <div *ngIf="canShow(i + 4)">{{ years[i + 4] }}</div>
+    </div>
+  </div> -->
+  <table class="table table-striped" *ngIf="years && showYears">
+    <tbody>
+      <tr *ngFor="let year of years;let i = index">
+      
+        <td>
+           <span *ngIf="i % 5 == 0"><a href="" class="btn btn-primary" ><a href="" class="btn btn-primary" (click)="selectYear(year)"  >{{year}} </a>&nbsp; </a>&nbsp;</span>
+        </td>
+        <td>
+           <span *ngIf="i % 5 == 0 && canShow(i + 1)"> <a href="" class="btn btn-primary" (click)="selectYear(years[i+1])"  >{{years[i+1]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i + 3)"> <a href="" class="btn btn-primary" (click)="selectYear(years[i+1])">{{years[i+2]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i + 3)"> <a href="" class="btn btn-primary" (click)="selectYear(years[i+1])" >{{years[i+3]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i +4)"> <a href="" class="btn btn-primary" (click)="selectYear(years[i+1])" >{{years[i+4]}} </a>&nbsp; </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table class="table table-striped" *ngIf="makes && showMakes">
+    <tbody>
+      <tr *ngFor="let make of makes;let i = index">
+      
+        <td>
+           <span *ngIf="i % 5 == 0"><a href="" class="btn btn-primary" ><a href="" class="btn btn-primary" (click)="selectMake(make)"  >{{make}} </a>&nbsp; </a>&nbsp;</span>
+        </td>
+        <td>
+           <span *ngIf="i % 5 == 0 && canShow(i + 1)"> <a href="" class="btn btn-primary" (click)="selectMake(makes[i+1])"  >{{makes[i+1]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i + 3)"> <a href="" class="btn btn-primary" (click)="selectMake(makes[i+1])">{{makes[i+2]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i + 3)"> <a href="" class="btn btn-primary" (click)="selectMake(makes[i+1])" >{{makes[i+3]}} </a>&nbsp; </span>
+        </td>
+        <td>
+            <span *ngIf="i % 5 == 0 && canShow(i +4)"> <a href="" class="btn btn-primary" (click)="selectMake(makes[i+1])" >{{makes[i+4]}} </a>&nbsp; </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
